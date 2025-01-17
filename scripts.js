@@ -1,4 +1,3 @@
-// DOM Elements
 const addModal = document.getElementById('addModal');
 const viewModal = document.getElementById('viewModal');
 const addActivityBtn = document.getElementById('addActivityBtn');
@@ -10,7 +9,7 @@ const notification = document.getElementById('notification');
 
 let activities = [];
 
-// date
+
 function formatDate(dateString) {
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, '0');
