@@ -7,10 +7,10 @@ const activitiesContainer = document.getElementById('activitiesContainer');
 const noActivities = document.getElementById('noActivities');
 const notification = document.getElementById('notification');
 
-// Initialize empty activities array (will reset on page refresh)
+
 let activities = [];
 
-// Format date to DD/MM/YYYY
+// date
 function formatDate(dateString) {
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, '0');
@@ -27,12 +27,12 @@ document.querySelectorAll('.close').forEach(btn => {
     }
 });
 
-// Show add activity modal
+
 addActivityBtn.onclick = function() {
     addModal.style.display = 'block';
 }
 
-// Close modals when clicking outside
+// hide when clicking outside
 window.onclick = function(event) {
     if (event.target === addModal) {
         addModal.style.display = 'none';
@@ -42,7 +42,7 @@ window.onclick = function(event) {
     }
 }
 
-// Calculate streak days
+// Calculate streak days from the day the streak started
 function calculateStreak(startDate) {
     const start = new Date(startDate);
     const today = new Date();
@@ -50,7 +50,7 @@ function calculateStreak(startDate) {
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 
-// Show notification
+// Show notification for 5000 ms
 function showNotification(message) {
     notification.textContent = message;
     notification.style.display = 'block';
@@ -59,7 +59,7 @@ function showNotification(message) {
     }, 5000);
 }
 
-// Render activities
+
 function renderActivities() {
     if (activities.length === 0) {
         noActivities.style.display = 'block';
